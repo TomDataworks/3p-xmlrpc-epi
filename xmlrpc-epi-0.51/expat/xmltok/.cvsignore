@@ -1,6 +1,0 @@
-Makefile
-.deps
-xmltok.lo
-xmlrole.lo
-.libs
-libexpat_tok.la

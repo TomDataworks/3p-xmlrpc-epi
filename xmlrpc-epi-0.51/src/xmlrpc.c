@@ -120,7 +120,7 @@ static const char rcsid[] =
 
 #include "queue.h"
 #include "xmlrpc.h"
-#include "xmlparse.h"
+#include "expat.h"
 #include "base64.h"
 
 #include "xml_to_xmlrpc.h"

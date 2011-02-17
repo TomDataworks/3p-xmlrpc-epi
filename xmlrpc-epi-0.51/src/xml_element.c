@@ -91,7 +91,7 @@ static const char rcsid[] = "#(@) $Id: xml_element.c,v 1.8 2002/05/23 17:46:51 d
 
 #include "xml_element.h"
 #include "queue.h"
-#include "xmlparse.h"
+#include "expat.h"
 #include "encodings.h"
 
 #define my_free(thing)  if(thing) {free(thing); thing = 0;}
@@ -170,7 +170,10 @@ void xml_elem_free_non_recurse(xml_element* root) {
 
       Q_Destroy(&root->children);
       Q_Destroy(&root->attrs);
-      my_free((char*)root->name);
+      //my_free((char*)root->name);
+	  // the above doesn't build in gcc-4 -- error: invalid lvalue in assignment
+	  // but the below does:
+      my_free(root->name);
       simplestring_free(&root->text);
       my_free(root);
    }

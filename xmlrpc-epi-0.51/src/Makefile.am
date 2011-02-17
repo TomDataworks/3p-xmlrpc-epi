@@ -1,8 +1,6 @@
-INCLUDES=-I../liblm -I../expat/xmltok -I../expat/xmlparse -I/usr/local/ssl/include 
+INCLUDES=-I../liblm -I../expat -I/usr/local/ssl/include 
 
 lib_LTLIBRARIES = libxmlrpc.la
-
-libxmlrpc_la_LIBADD = ../expat/xmltok/libexpat_tok.la ../expat/xmlparse/libexpat_parse.la
 
 libxmlrpc_la_SOURCES = \
 	base64.c \

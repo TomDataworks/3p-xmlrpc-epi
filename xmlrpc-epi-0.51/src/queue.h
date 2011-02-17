@@ -24,6 +24,9 @@
    #define True_ 1
 #endif
 
+/* 2006-05-02 Inserted to enable compilation of rpcserver on linux. Phoenix */
+#define queue xmlrpc_queue
+
 typedef struct nodeptr datanode;
 
 typedef struct nodeptr {

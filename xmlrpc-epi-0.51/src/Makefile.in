@@ -75,11 +75,9 @@ RANLIB = @RANLIB@
 STRIP = @STRIP@
 VERSION = @VERSION@
 
-INCLUDES = -I../liblm -I../expat/xmltok -I../expat/xmlparse -I/usr/local/ssl/include 
+INCLUDES = -I../liblm -I../expat -I/usr/local/ssl/include 
 
 lib_LTLIBRARIES = libxmlrpc.la
-
-libxmlrpc_la_LIBADD = ../expat/xmltok/libexpat_tok.la ../expat/xmlparse/libexpat_parse.la
 
 libxmlrpc_la_SOURCES =  	base64.c 	encodings.c 	queue.c 	simplestring.c 	xml_element.c 	xml_to_dandarpc.c 	xml_to_xmlrpc.c         xml_to_soap.c 	xmlrpc.c 	xmlrpc_introspection.c         system_methods.c
 
@@ -130,8 +128,6 @@ DEFS = @DEFS@ -I. -I$(srcdir)
 CPPFLAGS = @CPPFLAGS@
 LDFLAGS = @LDFLAGS@
 LIBS = @LIBS@
-libxmlrpc_la_DEPENDENCIES =  ../expat/xmltok/libexpat_tok.la \
-../expat/xmlparse/libexpat_parse.la
 libxmlrpc_la_OBJECTS =  base64.lo encodings.lo queue.lo simplestring.lo \
 xml_element.lo xml_to_dandarpc.lo xml_to_xmlrpc.lo xml_to_soap.lo \
 xmlrpc.lo xmlrpc_introspection.lo system_methods.lo
