@@ -5,14 +5,7 @@
 ORIGINAL_DIR=$PWD
 PROJECT="xmlrpc-epi"
 VERSION="0.51"
-SOURCE_DIR="/tmp/$PROJECT-$VERSION"
-TAR_FILE="$PROJECT-$VERSION.tar.gz"
-
-# verify tarfile
-if [ ! -f $TAR_FILE ]; then
-	echo Could not find tarfile $TAR_FILE
-	exit 1
-fi
+SOURCE_DIR="$PROJECT-$VERSION"
 
 # verify that $PKG_INSTALL_DIR is defined
 if [ -z $PKG_INSTALL_DIR ]; then
@@ -31,33 +24,11 @@ if [ ! -d $PKG_INSTALL_DIR ]; then
 	fi
 fi
 
-# since we do patches below we must always start fresh, 
-# so delete any pre-existing source
-if [ -d $SOURCE_DIR ]; then
-	echo "cleaning out old source in $SOURCE_DIR..."
-	rm -rf $SOURCE_DIR
-fi
-
-# untar
-if [ ! -d $SOURCE_DIR ]; then
-	echo "unpacking tarfile to $SOURCE_DIR..."
-	tar -C /tmp -xzf $TAR_FILE
-fi
-
-# first two patches
-cd $SOURCE_DIR
-$ patch -p1 < $ORIGIINAL_DIR/remove_iconv.patch
-$ patch -p1 < $ORIGIINAL_DIR/rename_queue.patch
-
 # configure
 cd $SOURCE_DIR
 echo "configuring $PROJECT-$VERSION ..."
 # this project doesn't use the 'make install' paradigm, so no --prefix=
 ./configure --prefix=$PKG_INSTALL_DIR
-
-# third patch is done after the configure
-cd $SOURCE_DIR
-patch -p1 < $ORIGINAL_DIR/excise_expat.patch
 
 # verify that expat was built and installed first
 EXPAT_INCLUDE_DIR=$PKG_INSTALL_DIR/include
@@ -75,15 +46,6 @@ fi
 cd $SOURCE_DIR
 echo "copying expat headers over from $EXPAT_INCLUDE_DIR..."
 cp -v $EXPAT_INCLUDE_DIR/expat*.h src
-
-# check for gcc-4 which requires an extra patch
-GCC_VERSION=`gcc --version | grep '^gcc' | awk '{ print $3 }'`
-echo GCC_VERSION = $GCC_VERSION
-if [[ $GCC_VERSION = 4.* ]]; then
-	# fix some gcc-4 problems
-	echo "patching xml_element.c..."
-	patch -p1 < $ORIGINAL_DIR/gcc4_xml_element.patch
-fi
 
 # build
 cd $SOURCE_DIR
