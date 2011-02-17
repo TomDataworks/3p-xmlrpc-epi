@@ -1,0 +1,6 @@
+Makefile
+.deps
+xmlparse.lo
+hashtable.lo
+.libs
+libexpat_parse.la
