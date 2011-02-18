@@ -54,8 +54,8 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
         "windows")
             load_vsvars
             
-            build_sln "xmlrpcepi.sln" "Debug|Win32" "xmlrpc-epi"
-            build_sln "xmlrpcepi.sln" "Release|Win32" "xmlrpc-epi"
+            build_sln "xmlrpcepi.sln" "Debug|Win32" "xmlrpcepi"
+            build_sln "xmlrpcepi.sln" "Release|Win32" "xmlrpcepi"
             mkdir -p "$stage/lib/debug"
             mkdir -p "$stage/lib/release"
             cp "contrib/vstudio/vc10/x86/xmlrpc-epiDebug/xmlrpc-epi.lib" \
