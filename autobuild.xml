@@ -5,6 +5,8 @@
     <map>
       <key>expat</key>
       <map>
+        <key>license</key>
+        <string>MIT</string>
         <key>name</key>
         <string>expat</string>
         <key>platforms</key>
