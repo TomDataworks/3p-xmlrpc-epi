@@ -38,14 +38,18 @@ do_install ()
     fi
     mkdir -p $HEADER_DIR
     # we don't need ALL the headers, so we only copy the ones we need
-    cp -v src/base64.h $HEADER_DIR
-    cp -v src/encodings.h $HEADER_DIR
-    cp -v src/queue.h $HEADER_DIR
-    cp -v src/simplestring.h $HEADER_DIR
-    cp -v src/xml_element.h $HEADER_DIR
-    cp -v src/xmlrpc.h $HEADER_DIR
-    cp -v src/xmlrpc_introspection.h $HEADER_DIR
-    cp -v src/xml_to_xmlrpc.h $HEADER_DIR
+}
+
+copy_headers ()
+{
+    cp -v src/base64.h $1
+    cp -v src/encodings.h $1
+    cp -v src/queue.h $1
+    cp -v src/simplestring.h $1
+    cp -v src/xml_element.h $1
+    cp -v src/xmlrpc.h $1
+    cp -v src/xmlrpc_introspection.h $1
+    cp -v src/xml_to_xmlrpc.h $1
 }
 
 stage="$(pwd)/stage"
@@ -58,12 +62,12 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
             build_sln "xmlrpcepi.sln" "Release|Win32" "xmlrpcepi"
             mkdir -p "$stage/lib/debug"
             mkdir -p "$stage/lib/release"
-            cp "contrib/vstudio/vc10/x86/xmlrpc-epiDebug/xmlrpc-epi.lib" \
+            cp "Debug/xmlrpcepi.lib" \
                 "$stage/lib/debug/xmlrpc-epid.lib"
-            cp "contrib/vstudio/vc10/x86/xmlrpc-epiRelease/xmlrpc-epi.lib" \
+            cp "Release/xmlrpcepi.lib" \
                 "$stage/lib/release/xmlrpc-epi.lib"
             mkdir -p "$stage/include/xmlrpc-epi"
-            cp {xmlrpc-epi.h} "$stage/include/xmlrpc-epi"
+	    copy_headers "$stage/include/xmlrpc-epi"
         ;;
         "darwin")
             opts='-arch i386 -iwithsysroot /Developer/SDKs/MacOSX10.5.sdk'

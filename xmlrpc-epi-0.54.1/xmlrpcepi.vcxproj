@@ -48,7 +48,7 @@
       <AdditionalOptions>/D VERSION="\"0.50\"" %(AdditionalOptions)</AdditionalOptions>
       <Optimization>MaxSpeed</Optimization>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
-      <AdditionalIncludeDirectories>..\i686-win32\include\xmlrpc-epi;iconv-1.7\include;expat\xmlparse;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\stage\packages\include\expat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;_USRDLL;XMLRPCEPI_EXPORTS;snprintf=_snprintf;inline=__inline;strcasecmp=stricmp;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -81,7 +81,7 @@
     <ClCompile>
       <AdditionalOptions>/D VERSION="\"0.50\"" %(AdditionalOptions)</AdditionalOptions>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\i686-win32\include\xmlrpc-epi;iconv-1.7\include;expat\xmlparse;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\stage\packages\include\expat;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_DEBUG;WIN32;_WINDOWS;_USRDLL;XMLRPCEPI_EXPORTS;snprintf=_snprintf;inline=__inline;strcasecmp=stricmp;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
