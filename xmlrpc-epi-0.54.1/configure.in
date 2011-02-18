@@ -56,5 +56,5 @@ AC_FUNC_STRFTIME
 AC_CHECK_FUNCS(mktime strstr)
 
 AC_OUTPUT()
-AC_OUTPUT(src/Makefile Makefile sample/Makefile)
+AC_OUTPUT(src/Makefile Makefile)
 

@@ -1,6 +1,6 @@
 
-SUBDIRS = src sample
-DIST_SUBDIRS = src sample
+SUBDIRS = src
+DIST_SUBDIRS = src
 
 ACLOCAL_AMFLAGS = -I m4
 
