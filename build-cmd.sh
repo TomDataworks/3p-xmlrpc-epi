@@ -67,7 +67,7 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
         ;;
         "darwin")
             opts='-arch i386 -iwithsysroot /Developer/SDKs/MacOSX10.5.sdk'
-            CFLAGS="$opts" CXXFLAGS="$opts" ./configure --prefix-"$stage" \
+            CFLAGS="$opts" CXXFLAGS="$opts" ./configure --prefix="$stage" \
                 --with-expat=yes \
                 --with-expat-lib=../stage/packages/lib/release/libexpat.dylib \
                 --with-expat-inc=../stage/packages/include/expat
@@ -78,7 +78,7 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
         ;;
         "linux")
             opts='-arch i386'
-            CFLAGS="$opts" CXXFLAGS="$opts" ./configure --prefix-"$stage" \
+            CFLAGS="$opts" CXXFLAGS="$opts" ./configure --prefix="$stage" \
                 --with-expat=yes \
                 --with-expat-lib=../stage/packages/lib/release/libexpat.dylib \
                 --with-expat-inc=../stage/packages/include/expat
