@@ -33,13 +33,14 @@ if test "x$(uname -s)" = "xSunOS"; then
 	fi
 fi
 
-AC_CHECK_HEADERS([expat.h], [], [AC_MSG_ERROR([Sorry expat.h not found, is libexpat and libexpat-dev installed?])],[])
-AC_CHECK_LIB(expat, XML_ParserCreate, [], [ AC_MSG_ERROR([libexpat.so not found])])
+AX_LIB_EXPAT([1.5])
+AS_IF([test "x$HAVE_EXPAT" = xno], [AC_MSG_ERROR([Missing expat, please use --with-expat to point to it.])])
 
 dnl Checks for header files.
 AC_HEADER_STDC
 AC_CHECK_HEADERS(fcntl.h malloc.h unistd.h)
-AC_CHECK_HEADER(iconv.h,[],[AC_MSG_ERROR([Sorry iconv.h not found, please ensure libiconv/libiconv-dev is installed])])
+dnl We've neutered iconv
+dnl AC_CHECK_HEADER(iconv.h,[],[AC_MSG_ERROR([Sorry iconv.h not found, please ensure libiconv/libiconv-dev is installed])])
 
 dnl Checks for typedefs, structures, and compiler characteristics.
 AC_C_CONST
