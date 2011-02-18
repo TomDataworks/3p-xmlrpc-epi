@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="7.10"
 	Name="xmlrpcepi"
-	ProjectGUID="{4FDE609B-963E-457C-89F8-1BED842DBFFB}"
+	ProjectGUID="{1E82FD0C-DCC8-4C37-A58D-FD1878EF9254}"
 	SccProjectName=""
 	SccLocalPath="">
 	<Platforms>
@@ -15,7 +15,7 @@
 			Name="Release|Win32"
 			OutputDirectory=".\Release"
 			IntermediateDirectory=".\Release"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE"
 			CharacterSet="2">
@@ -24,10 +24,10 @@
 				AdditionalOptions="/D VERSION=&quot;\&quot;0.50\&quot;&quot;"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="&quot;C:\Program Files\GnuWin32\include&quot;;&quot;C:\Program Files\Expat 2.0.1\Source\lib&quot;"
+				AdditionalIncludeDirectories="&quot;..\i686-win32\include\xmlrpc-epi&quot;;iconv-1.7\include,expat\xmlparse"
 				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;_USRDLL;XMLRPCEPI_EXPORTS;snprintf=_snprintf;inline=__inline;strcasecmp=stricmp"
 				StringPooling="TRUE"
-				RuntimeLibrary="2"
+				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="TRUE"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderFile=".\Release/xmlrpcepi.pch"
@@ -40,16 +40,7 @@
 			<Tool
 				Name="VCCustomBuildTool"/>
 			<Tool
-				Name="VCLinkerTool"
-				AdditionalDependencies="libiconv.lib libexpat.lib"
-				OutputFile=".\Release/xmlrpcepi.dll"
-				LinkIncremental="1"
-				SuppressStartupBanner="TRUE"
-				AdditionalLibraryDirectories="&quot;C:\Program Files\GnuWin32\lib&quot;;&quot;C:\Program Files\Expat 2.0.1\Bin&quot;"
-				ModuleDefinitionFile=".\src\xmlrpc.def"
-				ProgramDatabaseFile=".\Release/xmlrpcepi.pdb"
-				ImportLibrary=".\Release/xmlrpcepi.lib"
-				TargetMachine="1"/>
+				Name="VCLibrarianTool"/>
 			<Tool
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="NDEBUG"
@@ -73,8 +64,6 @@
 			<Tool
 				Name="VCXMLDataGeneratorTool"/>
 			<Tool
-				Name="VCWebDeploymentTool"/>
-			<Tool
 				Name="VCManagedWrapperGeneratorTool"/>
 			<Tool
 				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
@@ -83,7 +72,7 @@
 			Name="Debug|Win32"
 			OutputDirectory=".\Debug"
 			IntermediateDirectory=".\Debug"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="FALSE"
 			CharacterSet="2">
@@ -91,10 +80,10 @@
 				Name="VCCLCompilerTool"
 				AdditionalOptions="/D VERSION=&quot;\&quot;0.50\&quot;&quot;"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;C:\Program Files\GnuWin32\include&quot;;&quot;C:\Program Files\Expat 2.0.1\Source\lib&quot;"
+				AdditionalIncludeDirectories="&quot;..\i686-win32\include\xmlrpc-epi&quot;;&quot;iconv-1.7\include&quot;;expat\xmlparse"
 				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;_USRDLL;XMLRPCEPI_EXPORTS;snprintf=_snprintf;inline=__inline;strcasecmp=stricmp"
 				BasicRuntimeChecks="3"
-				RuntimeLibrary="3"
+				RuntimeLibrary="1"
 				UsePrecompiledHeader="2"
 				PrecompiledHeaderFile=".\Debug/xmlrpcepi.pch"
 				AssemblerListingLocation=".\Debug/"
@@ -107,18 +96,7 @@
 			<Tool
 				Name="VCCustomBuildTool"/>
 			<Tool
-				Name="VCLinkerTool"
-				AdditionalDependencies="libiconv.lib libexpat.lib"
-				OutputFile=".\Debug/xmlrpcepi.dll"
-				LinkIncremental="1"
-				SuppressStartupBanner="TRUE"
-				AdditionalLibraryDirectories="&quot;C:\Program Files\GnuWin32\lib&quot;;&quot;C:\Program Files\Expat 2.0.1\Bin&quot;"
-				IgnoreDefaultLibraryNames="msvcrt"
-				ModuleDefinitionFile=".\src\xmlrpc.def"
-				GenerateDebugInformation="TRUE"
-				ProgramDatabaseFile=".\Debug/xmlrpcepi.pdb"
-				ImportLibrary=".\Debug/xmlrpcepi.lib"
-				TargetMachine="1"/>
+				Name="VCLibrarianTool"/>
 			<Tool
 				Name="VCMIDLTool"
 				PreprocessorDefinitions="_DEBUG"
@@ -141,8 +119,6 @@
 				Name="VCWebServiceProxyGeneratorTool"/>
 			<Tool
 				Name="VCXMLDataGeneratorTool"/>
-			<Tool
-				Name="VCWebDeploymentTool"/>
 			<Tool
 				Name="VCManagedWrapperGeneratorTool"/>
 			<Tool
