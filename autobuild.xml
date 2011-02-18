@@ -1,6 +1,53 @@
 <?xml version="1.0" ?>
 <llsd>
 <map>
+    <key>installables</key>
+    <map>
+      <key>expat</key>
+      <map>
+        <key>name</key>
+        <string>expat</string>
+        <key>platforms</key>
+        <map>
+          <key>darwin</key>
+          <map>
+            <key>archive</key>
+            <map>
+              <key>hash</key>
+              <string>a9fdcc2afc0a7f9711e28530f098e402</string>
+              <key>url</key>
+              <string>http://automated-builds-secondlife-com.s3.amazonaws.com/hg/repo/3p-expat/rev/221208/arch/Darwin/installer/expat-2.0.1-darwin-20110215.tar.bz2</string>
+            </map>
+            <key>name</key>
+            <string>darwin</string>
+          </map>
+          <key>linux</key>
+          <map>
+            <key>archive</key>
+            <map>
+              <key>hash</key>
+              <string>750a6f119f828ba464029b7584acfc79</string>
+              <key>url</key>
+              <string>http://automated-builds-secondlife-com.s3.amazonaws.com/hg/repo/3p-expat/rev/221208/arch/Linux/installer/expat-2.0.1-linux-20110215.tar.bz2</string>
+            </map>
+            <key>name</key>
+            <string>linux</string>
+          </map>
+          <key>windows</key>
+          <map>
+            <key>archive</key>
+            <map>
+              <key>hash</key>
+              <string>e72db1bda49b205ebdf4945d4ed2b8f8</string>
+              <key>url</key>
+              <string>http://automated-builds-secondlife-com.s3.amazonaws.com/hg/repo/3p-expat/rev/221208/arch/CYGWIN/installer/expat-2.0.1-windows-20110215.tar.bz2</string>
+            </map>
+            <key>name</key>
+            <string>windows</string>
+          </map>
+        </map>
+      </map>
+    </map>
     <key>package_description</key>
     <map>
       <key>copyright</key>
