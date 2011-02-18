@@ -35,11 +35,17 @@ static const char rcsid[] = "#(@) $Id: encodings.c,v 1.4 2005/03/17 22:41:15 dan
 
 #include <stdlib.h>
 #include <errno.h>
-#include <iconv.h>
+//#include <iconv.h>
 #include "encodings.h"
 
 static char* convert(const char* src, int src_len, int *new_len, const char* from_enc, const char* to_enc) {
    char* outbuf = 0;
+
+   /*
+	*
+	*NOTE: Removed becuase windows does not have iconv, and mac
+	*      has link problems with it. For now, always use UTF8.
+	*
 
    if(src && src_len && from_enc && to_enc) {
       size_t outlenleft = src_len;
@@ -87,6 +93,7 @@ static char* convert(const char* src, int src_len, int *new_len, const char* fro
          outbuf[outlen] = 0;
       }
    }
+   */
    return outbuf;
 }
 
