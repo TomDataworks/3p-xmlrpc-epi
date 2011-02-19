@@ -87,7 +87,7 @@
           <key>manifest</key>
           <array>
             <string>LICENSES/xmlrpc-epi.txt</string>
-            <string>include/*.h</string>
+            <string>include/xmlrpc-epi/*.h</string>
           </array>
           <key>name</key>
           <string>common</string>
