@@ -84,6 +84,11 @@
               <string>default</string>
             </map>
           </map>
+          <key>manifest</key>
+          <array>
+            <string>LICENSES/xmlrpc-epi.txt</string>
+            <string>include/*.h</string>
+          </array>
           <key>name</key>
           <string>common</string>
         </map>
@@ -104,6 +109,10 @@
               <string>default</string>
             </map>
           </map>
+          <key>manifest</key>
+          <array>
+            <string>lib/*.a</string>
+          </array>
           <key>name</key>
           <string>darwin</string>
         </map>
@@ -124,6 +133,10 @@
               <string>default</string>
             </map>
           </map>
+          <key>manifest</key>
+          <array>
+            <string>lib/*.a</string>
+          </array>
           <key>name</key>
           <string>linux</string>
         </map>
@@ -144,6 +157,13 @@
               <string>default</string>
             </map>
           </map>
+          <key>manifest</key>
+          <array>
+            <string>lib/debug/*.pdb</string>
+            <string>lib/debug/*.lib</string>
+            <string>lib/release/*.pdb</string>
+            <string>lib/release/*.lib</string>
+          </array>
           <key>name</key>
           <string>windows</string>
         </map>
