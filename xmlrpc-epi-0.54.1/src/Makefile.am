@@ -1,6 +1,9 @@
 
 lib_LTLIBRARIES = libxmlrpc-epi.la
 
+AM_CPPFLAGS = $(EXPAT_CFLAGS)
+libxmlrpc_epi_la_LDFLAGS = -version-info 0:3:0 $(EXPAT_LDFLAGS)
+
 libxmlrpc_epi_la_SOURCES = \
 	base64.c \
 	encodings.c \
@@ -14,7 +17,6 @@ libxmlrpc_epi_la_SOURCES = \
 	xmlrpc_introspection.c \
         system_methods.c
 
-libxmlrpc_epi_la_LDFLAGS = -version-info 0:3:0
 libxmlrpc_epi_incdir=$(includedir)/xmlrpc-epi 
 include_HEADERS = \
 	base64.h \
