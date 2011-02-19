@@ -93,7 +93,7 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
         ;;
     esac
     mkdir -p "$stage/LICENSES"
-    cp "COPYING" > "$stage/LICENSES/xmlrpc-epi.txt"
+    cp "COPYING" "$stage/LICENSES/xmlrpc-epi.txt"
 popd
 
 pass
