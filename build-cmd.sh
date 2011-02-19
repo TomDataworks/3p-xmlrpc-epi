@@ -28,8 +28,8 @@ do_install ()
     # copy libs
     # NOTE -- we rename the lib: libxmlrpc.a --> libmxlprc-epi.a
     cd $SOURCE_DIR
-    cp -v $PKG_INSTALL_DIR/lib/libxmlrpc.a $SANDBOX_INSTALL_DIR/lib_release/libxmlrpc-epi.a
-    cp -v $PKG_INSTALL_DIR/lib/libxmlrpc.a $SANDBOX_INSTALL_DIR/lib_release_client/libxmlrpc-epi.a
+    cp $PKG_INSTALL_DIR/lib/libxmlrpc.a $SANDBOX_INSTALL_DIR/lib_release/libxmlrpc-epi.a
+    cp $PKG_INSTALL_DIR/lib/libxmlrpc.a $SANDBOX_INSTALL_DIR/lib_release_client/libxmlrpc-epi.a
 
     # copy headers
     HEADER_DIR=$CURRENT_LINDEN_SANDBOX/libraries/include/$PROJECT
@@ -42,14 +42,14 @@ do_install ()
 
 copy_headers ()
 {
-    cp -v src/base64.h $1
-    cp -v src/encodings.h $1
-    cp -v src/queue.h $1
-    cp -v src/simplestring.h $1
-    cp -v src/xml_element.h $1
-    cp -v src/xmlrpc.h $1
-    cp -v src/xmlrpc_introspection.h $1
-    cp -v src/xml_to_xmlrpc.h $1
+    cp src/base64.h $1
+    cp src/encodings.h $1
+    cp src/queue.h $1
+    cp src/simplestring.h $1
+    cp src/xml_element.h $1
+    cp src/xmlrpc.h $1
+    cp src/xmlrpc_introspection.h $1
+    cp src/xml_to_xmlrpc.h $1
 }
 
 stage="$(pwd)/stage"
@@ -93,7 +93,7 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
         ;;
     esac
     mkdir -p "$stage/LICENSES"
-    cp -v "COPYING" > "$stage/LICENSES/xmlrpc-epi.txt"
+    cp "COPYING" > "$stage/LICENSES/xmlrpc-epi.txt"
 popd
 
 pass
