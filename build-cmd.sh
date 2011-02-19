@@ -84,7 +84,7 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
             opts='-m32'
             CFLAGS="$opts" CXXFLAGS="$opts" ./configure --prefix="$stage" \
                 --with-expat=yes \
-                --with-expat-lib=../stage/packages/lib/release/libexpat.dylib \
+                --with-expat-lib=../stage/packages/lib/release/libexpat.so \
                 --with-expat-inc=../stage/packages/include/expat
             make
             make install
