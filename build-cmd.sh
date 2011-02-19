@@ -73,8 +73,8 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
             opts='-arch i386 -iwithsysroot /Developer/SDKs/MacOSX10.5.sdk'
             CFLAGS="$opts" CXXFLAGS="$opts" ./configure --prefix="$stage" \
                 --with-expat=yes \
-                --with-expat-lib=../stage/packages/lib/release/libexpat.dylib \
-                --with-expat-inc=../stage/packages/include/expat
+                --with-expat-lib="$stage/packages/lib/release/libexpat.dylib" \
+                --with-expat-inc="$stage/packages/include/expat"
             make
             make install
             mkdir -p "$stage/include/xmlrpc-epi"
@@ -84,8 +84,8 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
             opts='-m32'
             CFLAGS="$opts" CXXFLAGS="$opts" ./configure --prefix="$stage" \
                 --with-expat=yes \
-                --with-expat-lib=../stage/packages/lib/release/libexpat.so \
-                --with-expat-inc=../stage/packages/include/expat
+                --with-expat-lib="$stage/packages/lib/release/libexpat.so" \
+                --with-expat-inc="$stage/packages/include/expat"
             make
             make install
             mkdir -p "$stage/include/xmlrpc-epi"
