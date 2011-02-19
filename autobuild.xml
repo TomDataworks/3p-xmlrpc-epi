@@ -16,9 +16,9 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>a9fdcc2afc0a7f9711e28530f098e402</string>
+              <string>180e03d0be1f1acfc3244e78742d7bef</string>
               <key>url</key>
-              <string>http://automated-builds-secondlife-com.s3.amazonaws.com/hg/repo/3p-expat/rev/221208/arch/Darwin/installer/expat-2.0.1-darwin-20110215.tar.bz2</string>
+              <string>http://automated-builds-secondlife-com.s3.amazonaws.com/hg/repo/3p-expat/rev/221695/arch/Darwin/installer/expat-2.0.1-darwin-20110218.tar.bz2</string>
             </map>
             <key>name</key>
             <string>darwin</string>
@@ -28,9 +28,9 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>750a6f119f828ba464029b7584acfc79</string>
+              <string>9bd79781b58e556ab1c36084ec4a1c0c</string>
               <key>url</key>
-              <string>http://automated-builds-secondlife-com.s3.amazonaws.com/hg/repo/3p-expat/rev/221208/arch/Linux/installer/expat-2.0.1-linux-20110215.tar.bz2</string>
+              <string>http://automated-builds-secondlife-com.s3.amazonaws.com/hg/repo/3p-expat/rev/221695/arch/Linux/installer/expat-2.0.1-linux-20110219.tar.bz2</string>
             </map>
             <key>name</key>
             <string>linux</string>
@@ -40,9 +40,9 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>e72db1bda49b205ebdf4945d4ed2b8f8</string>
+              <string>f9ac8f365152bb4745e3a35fc4506da1</string>
               <key>url</key>
-              <string>http://automated-builds-secondlife-com.s3.amazonaws.com/hg/repo/3p-expat/rev/221208/arch/CYGWIN/installer/expat-2.0.1-windows-20110215.tar.bz2</string>
+              <string>http://automated-builds-secondlife-com.s3.amazonaws.com/hg/repo/3p-expat/rev/221695/arch/CYGWIN/installer/expat-2.0.1-windows-20110218.tar.bz2</string>
             </map>
             <key>name</key>
             <string>windows</string>
