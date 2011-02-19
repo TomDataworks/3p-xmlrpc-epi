@@ -63,8 +63,8 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
             mkdir -p "$stage/include/xmlrpc-epi"
             mv "$stage/include/"*.h "$stage/include/xmlrpc-epi/"
             mkdir -p "$stage/lib/release"
-            mv "$stage/lib/*.a" "$stage/lib/release"
-            mv "$stage/lib/*.dylib" "$stage/lib/release"
+            mv "$stage/lib/"*.a "$stage/lib/release"
+            mv "$stage/lib/"*.dylib "$stage/lib/release"
         ;;
         "linux")
             opts='-m32'
