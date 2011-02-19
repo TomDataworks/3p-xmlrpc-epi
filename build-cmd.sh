@@ -23,23 +23,6 @@ set +x
 eval "$("$AUTOBUILD" source_environment)"
 set -x
 
-do_install ()
-{
-    # copy libs
-    # NOTE -- we rename the lib: libxmlrpc.a --> libmxlprc-epi.a
-    cd $SOURCE_DIR
-    cp $PKG_INSTALL_DIR/lib/libxmlrpc.a $SANDBOX_INSTALL_DIR/lib_release/libxmlrpc-epi.a
-    cp $PKG_INSTALL_DIR/lib/libxmlrpc.a $SANDBOX_INSTALL_DIR/lib_release_client/libxmlrpc-epi.a
-
-    # copy headers
-    HEADER_DIR=$CURRENT_LINDEN_SANDBOX/libraries/include/$PROJECT
-    if [ -d $HEADER_DIR ]; then
-        rm -rf $HEADER_DIR
-    fi
-    mkdir -p $HEADER_DIR
-    # we don't need ALL the headers, so we only copy the ones we need
-}
-
 copy_headers ()
 {
     cp src/base64.h $1
@@ -67,7 +50,7 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
             cp "Release/xmlrpcepi.lib" \
                 "$stage/lib/release/xmlrpc-epi.lib"
             mkdir -p "$stage/include/xmlrpc-epi"
-	    copy_headers "$stage/include/xmlrpc-epi"
+            copy_headers "$stage/include/xmlrpc-epi"
         ;;
         "darwin")
             opts='-arch i386 -iwithsysroot /Developer/SDKs/MacOSX10.5.sdk'
@@ -79,6 +62,9 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
             make install
             mkdir -p "$stage/include/xmlrpc-epi"
             mv "$stage/include/"*.h "$stage/include/xmlrpc-epi/"
+            mkdir -p "$stage/lib/release"
+            mv "$stage/lib/*.a" "$stage/lib/release"
+            mv "$stage/lib/*.dylib" "$stage/lib/release"
         ;;
         "linux")
             opts='-m32'
