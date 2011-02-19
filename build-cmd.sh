@@ -81,7 +81,7 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
             mv "$stage/include/"*.h "$stage/include/xmlrpc-epi/"
         ;;
         "linux")
-            opts='-arch i386'
+            opts='-m32'
             CFLAGS="$opts" CXXFLAGS="$opts" ./configure --prefix="$stage" \
                 --with-expat=yes \
                 --with-expat-lib=../stage/packages/lib/release/libexpat.dylib \
