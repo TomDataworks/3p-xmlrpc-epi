@@ -16270,6 +16270,8 @@ fi
 # Check whether --with-expat-inc was given.
 if test "${with_expat_inc+set}" = set; then
   withval=$with_expat_inc; expat_include_dir="$withval"
+         expat_requested="yes"
+	
 else
   expat_include_dir=""
     
@@ -16279,6 +16281,8 @@ fi
 # Check whether --with-expat-lib was given.
 if test "${with_expat_lib+set}" = set; then
   withval=$with_expat_lib; expat_lib_flags="$withval"
+         expat_requested="yes"
+	
 else
   expat_lib_flags=""
     

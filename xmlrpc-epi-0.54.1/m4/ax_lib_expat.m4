@@ -86,14 +86,18 @@ AC_DEFUN([AX_LIB_EXPAT],
         AS_HELP_STRING([--with-expat-inc=@<:@DIR@:>@],
             [path to Expat XML Parser headers]
         ),
-        [expat_include_dir="$withval"],
+        [expat_include_dir="$withval"
+         expat_requested="yes"
+	],
         [expat_include_dir=""]
     )
     AC_ARG_WITH([expat-lib],
         AS_HELP_STRING([--with-expat-lib=@<:@ARG@:>@],
             [link options for Expat XML Parser libraries]
         ),
-        [expat_lib_flags="$withval"],
+        [expat_lib_flags="$withval"
+         expat_requested="yes"
+	],
         [expat_lib_flags=""]
     )
 

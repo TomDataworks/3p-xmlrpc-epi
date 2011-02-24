@@ -55,7 +55,7 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
         "darwin")
             opts='-arch i386 -iwithsysroot /Developer/SDKs/MacOSX10.5.sdk'
             CFLAGS="$opts" CXXFLAGS="$opts" ./configure --prefix="$stage" \
-                --with-expat=yes \
+                --with-expat=no \
                 --with-expat-lib="$stage/packages/lib/release/libexpat.dylib" \
                 --with-expat-inc="$stage/packages/include/expat"
             make
@@ -65,11 +65,16 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
             mkdir -p "$stage/lib/release"
             mv "$stage/lib/"*.a "$stage/lib/release"
             mv "$stage/lib/"*.dylib "$stage/lib/release"
+            rm "$stage/lib/"*.la
+            # The expat build manages to get these paths right automatically,
+            # but this one doesn't; whatever, just update the paths here:
+            install_name_tool -id "@executable_path/../Resources/libxmlrpc-epi.0.dylib" "$stage/lib/release/libxmlrpc-epi.0.dylib"
+            install_name_tool -change "/usr/lib/libexpat.1.dylib" "@executable_path/../Resources/libexpat.1.dylib" "$stage/lib/release/libxmlrpc-epi.0.dylib"
         ;;
         "linux")
             opts='-m32'
             CFLAGS="$opts" CXXFLAGS="$opts" ./configure --prefix="$stage" \
-                --with-expat=yes \
+                --with-expat=no \
                 --with-expat-lib="$stage/packages/lib/release/libexpat.so" \
                 --with-expat-inc="$stage/packages/include/expat"
             make
