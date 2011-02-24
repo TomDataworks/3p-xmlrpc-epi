@@ -159,11 +159,11 @@
     <ClCompile Include="src\xml_element.c">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_DEBUG;WIN32;_WINDOWS;_MBCS;_USRDLL;XMLRPCEPI_EXPORTS;snprintf=_snprintf;inline=__inline;strcasecmp=stricmp</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_DEBUG;WIN32;_WINDOWS;_MBCS;_USRDLL;XML_STATIC;XMLRPCEPI_EXPORTS;snprintf=_snprintf;inline=__inline;strcasecmp=stricmp</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NDEBUG;WIN32;_WINDOWS;_MBCS;_USRDLL;XMLRPCEPI_EXPORTS;snprintf=_snprintf;inline=__inline;strcasecmp=stricmp</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NDEBUG;WIN32;_WINDOWS;_MBCS;_USRDLL;XMLRPCEPI_EXPORTS;snprintf=_snprintf;inline=__inline;strcasecmp=stricmp;XML_STATIC</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="src\xml_to_dandarpc.c">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
@@ -195,11 +195,11 @@
     <ClCompile Include="src\xmlrpc.c">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_DEBUG;WIN32;_WINDOWS;_MBCS;_USRDLL;XMLRPCEPI_EXPORTS;snprintf=_snprintf;inline=__inline;strcasecmp=stricmp</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_DEBUG;WIN32;_WINDOWS;_MBCS;_USRDLL;XMLRPCEPI_EXPORTS;snprintf=_snprintf;inline=__inline;strcasecmp=stricmp;XML_STATIC</PreprocessorDefinitions>
       <BasicRuntimeChecks Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EnableFastChecks</BasicRuntimeChecks>
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NDEBUG;WIN32;_WINDOWS;_MBCS;_USRDLL;XMLRPCEPI_EXPORTS;snprintf=_snprintf;inline=__inline;strcasecmp=stricmp</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NDEBUG;WIN32;_WINDOWS;_MBCS;_USRDLL;XMLRPCEPI_EXPORTS;snprintf=_snprintf;inline=__inline;strcasecmp=stricmp;XML_STATIC</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="src\xmlrpc_introspection.c">
       <Optimization Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Disabled</Optimization>
