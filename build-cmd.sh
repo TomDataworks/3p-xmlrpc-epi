@@ -81,6 +81,10 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
             make install
             mkdir -p "$stage/include/xmlrpc-epi"
             mv "$stage/include/"*.h "$stage/include/xmlrpc-epi/"
+
+            mv "$stage/lib" "$stage/release"
+            mkdir -p "$stage/lib"
+            mv "$stage/release" "$stage/lib"
         ;;
     esac
     mkdir -p "$stage/LICENSES"
