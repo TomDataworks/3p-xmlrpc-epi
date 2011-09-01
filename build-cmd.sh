@@ -53,8 +53,8 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
             copy_headers "$stage/include/xmlrpc-epi"
         ;;
         "darwin")
-            opts='-arch i386 -iwithsysroot /Developer/SDKs/MacOSX10.5.sdk'
-            CFLAGS="$opts" CXXFLAGS="$opts" ./configure --prefix="$stage" \
+            opts='-arch i386 -iwithsysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5'
+            CFLAGS="$opts" CXXFLAGS="$opts" LDFLAGS="$opts" ./configure --prefix="$stage" \
                 --with-expat=no \
                 --with-expat-lib="$stage/packages/lib/release/libexpat.dylib" \
                 --with-expat-inc="$stage/packages/include/expat"
