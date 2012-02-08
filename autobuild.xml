@@ -16,9 +16,9 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>180e03d0be1f1acfc3244e78742d7bef</string>
+              <string>552aa6f936a254e4ad03ee4f68e99cfd</string>
               <key>url</key>
-              <string>http://s3.amazonaws.com/viewer-source-downloads/install_pkgs/expat-2.0.1-darwin-20110218.tar.bz2</string>
+              <string>http://automated-builds-secondlife-com.s3.amazonaws.com/hg/repo/3p-expat/rev/246510/arch/Darwin/installer/expat-2.0.1-darwin-20111209.tar.bz2</string>
             </map>
             <key>name</key>
             <string>darwin</string>
@@ -28,9 +28,9 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>9bd79781b58e556ab1c36084ec4a1c0c</string>
+              <string>f725a725a20514963e3aa35fd8c35481</string>
               <key>url</key>
-              <string>http://s3.amazonaws.com/viewer-source-downloads/install_pkgs/expat-2.0.1-linux-20110219.tar.bz2</string>
+              <string>http://automated-builds-secondlife-com.s3.amazonaws.com/hg/repo/3p-expat/rev/246510/arch/Linux/installer/expat-2.0.1-linux-20111209.tar.bz2</string>
             </map>
             <key>name</key>
             <string>linux</string>
@@ -40,9 +40,9 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>f9ac8f365152bb4745e3a35fc4506da1</string>
+              <string>d95c1e91df370e2389fd8a6eec97e4a8</string>
               <key>url</key>
-              <string>http://s3.amazonaws.com/viewer-source-downloads/install_pkgs/expat-2.0.1-windows-20110218.tar.bz2</string>
+              <string>http://automated-builds-secondlife-com.s3.amazonaws.com/hg/repo/3p-expat/rev/246510/arch/CYGWIN/installer/expat-2.0.1-windows-20111209.tar.bz2</string>
             </map>
             <key>name</key>
             <string>windows</string>
