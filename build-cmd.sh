@@ -52,6 +52,20 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
             mkdir -p "$stage/include/xmlrpc-epi"
             copy_headers "$stage/include/xmlrpc-epi"
         ;;
+        "windows64")
+            load_vsvars
+            
+            build_sln "xmlrpcepi.sln" "Debug|x64" "xmlrpcepi"
+            build_sln "xmlrpcepi.sln" "Release|x64" "xmlrpcepi"
+            mkdir -p "$stage/lib/debug"
+            mkdir -p "$stage/lib/release"
+            cp "x64/Debug/xmlrpcepi.lib" \
+                "$stage/lib/debug/xmlrpc-epid.lib"
+            cp "x64/Release/xmlrpcepi.lib" \
+                "$stage/lib/release/xmlrpc-epi.lib"
+            mkdir -p "$stage/include/xmlrpc-epi"
+            copy_headers "$stage/include/xmlrpc-epi"
+        ;;
         "darwin")
             opts='-arch i386 -iwithsysroot /Developer/SDKs/MacOSX10.5.sdk -mmacosx-version-min=10.5'
             CFLAGS="$opts" CXXFLAGS="$opts" LDFLAGS="$opts" ./configure --prefix="$stage" \

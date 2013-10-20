@@ -47,6 +47,18 @@
             <key>name</key>
             <string>windows</string>
           </map>
+          <key>windows64</key>
+          <map>
+            <key>archive</key>
+            <map>
+              <key>hash</key>
+              <string>bba4b11205d9e860c256e52efd3b4a89</string>
+              <key>url</key>
+              <string>https://bitbucket.org/alchemyviewer/publiclibs/downloads/expat-2.1.0-windows64-20131019.tar.bz2</string>
+            </map>
+            <key>name</key>
+            <string>windows64</string>
+          </map>
         </map>
       </map>
     </map>
@@ -166,6 +178,33 @@
           </array>
           <key>name</key>
           <string>windows</string>
+        </map>
+        <key>windows64</key>
+        <map>
+          <key>build_directory</key>
+          <string>stage</string>
+          <key>configurations</key>
+          <map>
+            <key>default</key>
+            <map>
+              <key>build</key>
+              <map>
+              </map>
+              <key>default</key>
+              <string>true</string>
+              <key>name</key>
+              <string>default</string>
+            </map>
+          </map>
+          <key>manifest</key>
+          <array>
+            <string>lib/debug/*.pdb</string>
+            <string>lib/debug/*.lib</string>
+            <string>lib/release/*.pdb</string>
+            <string>lib/release/*.lib</string>
+          </array>
+          <key>name</key>
+          <string>windows64</string>
         </map>
       </map>
       <key>version</key>
