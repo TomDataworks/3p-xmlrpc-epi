@@ -40,9 +40,9 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>d95c1e91df370e2389fd8a6eec97e4a8</string>
+              <string>c123dfa22c7bfa984c7ecb3baa539a6c</string>
               <key>url</key>
-              <string>http://automated-builds-secondlife-com.s3.amazonaws.com/hg/repo/3p-expat/rev/246510/arch/CYGWIN/installer/expat-2.0.1-windows-20111209.tar.bz2</string>
+              <string>https://bitbucket.org/alchemyviewer/publiclibs-vs12/downloads/expat-2.1.0-windows-vs12-20140705.tar.bz2</string>
             </map>
             <key>name</key>
             <string>windows</string>
