@@ -95,8 +95,8 @@ typedef struct _doc_method {
  * Functions
  */
 void xi_register_system_methods(XMLRPC_SERVER server);
-inline XMLRPC_VALUE find_named_value(XMLRPC_VALUE list, const char* needle);
-inline void describe_method(XMLRPC_SERVER server, XMLRPC_VALUE vector, const char* method);
+XMLRPC_VALUE find_named_value(XMLRPC_VALUE list, const char* needle);
+void describe_method(XMLRPC_SERVER server, XMLRPC_VALUE vector, const char* method);
  
 /*----------------------------------------------------------------------------
  * Macros
