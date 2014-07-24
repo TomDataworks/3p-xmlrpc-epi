@@ -7,8 +7,7 @@ set -x
 # make errors fatal
 set -e
 
-XMLRPCEPI_VERSION="0.54.1"
-XMLRPCEPI_SOURCE_DIR="xmlrpc-epi-$XMLRPCEPI_VERSION"
+XMLRPCEPI_SOURCE_DIR="xmlrpc-epi"
 
 if [ -z "$AUTOBUILD" ] ; then 
     fail
@@ -68,9 +67,10 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
         ;;
         "darwin")
             opts='-arch i386 -arch x86_64 -iwithsysroot /Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.7'
-            CFLAGS="$opts" CXXFLAGS="$opts" LDFLAGS="$opts" ./configure --prefix="$stage" \
+            CFLAGS="$opts" CXXFLAGS="$opts" LDFLAGS="$opts" \
+                ./configure --with-pic --prefix="$stage" \
                 --with-expat=no \
-                --with-expat-lib="$stage/packages/lib/release/libexpat.dylib" \
+                --with-expat-lib="$stage/packages/lib/release/libexpat.a" \
                 --with-expat-inc="$stage/packages/include/expat"
             make
             make install
