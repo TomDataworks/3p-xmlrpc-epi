@@ -100,6 +100,17 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
             mkdir -p "$stage/lib"
             mv "$stage/release" "$stage/lib"
         ;;
+        "linux64")
+            opts='-m64'
+            CFLAGS="$opts -O3 -I$stage/packages/include/expat" \
+            CXXFLAGS="$opts -O3 -I$stage/packages/include/expat" \
+            LDFLAGS="$opts -L$stage/packages/lib/release" \
+            ./configure --with-pic --prefix="$stage" --includedir="$stage/include/xmlrpc-epi" --libdir="$stage/lib/release"
+            make
+            make install
+            #mkdir -p "$stage/include/xmlrpc-epi"
+            #mv "$stage/include/"*.h "$stage/include/xmlrpc-epi/"
+        ;;
     esac
     mkdir -p "$stage/LICENSES"
     cp "COPYING" "$stage/LICENSES/xmlrpc-epi.txt"
