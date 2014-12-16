@@ -1,3 +1,4 @@
+# -*- cmake -*-
 # Copyright (C) 2014 Cinder Roxley, All rights reserved.
 
 cmake_minimum_required(VERSION 2.8.4)
@@ -34,4 +35,4 @@ set(HEADER_FILES
     src/xmlrpc_introspection_private.h
     src/xmlrpc_private.h)
 
-add_executable(xmlrpc_epi ${SOURCE_FILES})
+add_library(xmlrpc_epi ${SOURCE_FILES})
