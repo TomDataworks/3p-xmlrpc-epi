@@ -87,29 +87,39 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
         ;;
         "linux")
             opts='-m32'
-            CFLAGS="$opts" CXXFLAGS="$opts" ./configure --prefix="$stage" \
-                --with-expat=no \
-                --with-expat-lib="$stage/packages/lib/release/libexpat.so" \
-                --with-expat-inc="$stage/packages/include/expat"
+            CFLAGS="$opts -Og -g -I$stage/packages/include/expat" \
+            CXXFLAGS="$opts -Og -g -I$stage/packages/include/expat" \
+            LDFLAGS="$opts -L$stage/packages/lib/debug" \
+            ./configure --with-pic --prefix="\${AUTOBUILD_PACKAGES_DIR}" --includedir="\${prefix}/include/xmlrpc-epi" --libdir="\${prefix}/lib/debug"
             make
-            make install
-            mkdir -p "$stage/include/xmlrpc-epi"
-            mv "$stage/include/"*.h "$stage/include/xmlrpc-epi/"
+            make install DESTDIR="$stage"
+            make distclean
 
-            mv "$stage/lib" "$stage/release"
-            mkdir -p "$stage/lib"
-            mv "$stage/release" "$stage/lib"
-        ;;
-        "linux64")
-            opts='-m64'
             CFLAGS="$opts -O3 -I$stage/packages/include/expat" \
             CXXFLAGS="$opts -O3 -I$stage/packages/include/expat" \
             LDFLAGS="$opts -L$stage/packages/lib/release" \
-            ./configure --with-pic --prefix="$stage" --includedir="$stage/include/xmlrpc-epi" --libdir="$stage/lib/release"
+            ./configure --with-pic --prefix="\${AUTOBUILD_PACKAGES_DIR}" --includedir="\${prefix}/include/xmlrpc-epi" --libdir="\${prefix}/lib/release"
             make
-            make install
-            #mkdir -p "$stage/include/xmlrpc-epi"
-            #mv "$stage/include/"*.h "$stage/include/xmlrpc-epi/"
+            make install DESTDIR="$stage"
+            make distclean
+        ;;
+        "linux64")
+            opts='-m64'
+            CFLAGS="$opts -Og -g -I$stage/packages/include/expat" \
+            CXXFLAGS="$opts -Og -g -I$stage/packages/include/expat" \
+            LDFLAGS="$opts -L$stage/packages/lib/debug" \
+            ./configure --with-pic --prefix="\${AUTOBUILD_PACKAGES_DIR}" --includedir="\${prefix}/include/xmlrpc-epi" --libdir="\${prefix}/lib/debug"
+            make
+            make install DESTDIR="$stage"
+            make distclean
+
+            CFLAGS="$opts -O3 -I$stage/packages/include/expat" \
+            CXXFLAGS="$opts -O3 -I$stage/packages/include/expat" \
+            LDFLAGS="$opts -L$stage/packages/lib/release" \
+            ./configure --with-pic --prefix="\${AUTOBUILD_PACKAGES_DIR}" --includedir="\${prefix}/include/xmlrpc-epi" --libdir="\${prefix}/lib/release"
+            make
+            make install DESTDIR="$stage"
+            make distclean
         ;;
     esac
     mkdir -p "$stage/LICENSES"

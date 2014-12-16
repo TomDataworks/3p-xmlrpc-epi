@@ -44,9 +44,9 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>80efc48883a32fa401dc584a37c82464</string>
+              <string>d92b89d9c8eb9c57346f9896712c1e27</string>
               <key>url</key>
-              <string>https://bitbucket.org/alchemyviewer/publiclibs-linux/downloads/expat-2.1.0-linux64-20141127.tar.bz2</string>
+              <string>http://depot.alchemyviewer.org/pub/linux/lib/expat-2.1.0-linux64-20141210.tar.bz2</string>
             </map>
             <key>name</key>
             <string>linux64</string>
@@ -165,6 +165,9 @@
           </map>
           <key>manifest</key>
           <array>
+            <string>lib/debug/pkgconfig/*.pc</string>
+            <string>lib/debug/*.a</string>
+            <string>lib/release/pkgconfig/*.pc</string>
             <string>lib/release/*.a</string>
           </array>
           <key>name</key>
@@ -189,6 +192,9 @@
           </map>
           <key>manifest</key>
           <array>
+            <string>lib/debug/pkgconfig/*.pc</string>
+            <string>lib/debug/*.a</string>
+            <string>lib/release/pkgconfig/*.pc</string>
             <string>lib/release/*.a</string>
           </array>
           <key>name</key>
