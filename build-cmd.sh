@@ -7,6 +7,7 @@ set -x
 # make errors fatal
 set -e
 
+XMLRPCEPI_VERSION="0.54.2"
 XMLRPCEPI_SOURCE_DIR="xmlrpc-epi"
 
 if [ -z "$AUTOBUILD" ] ; then 
@@ -35,6 +36,11 @@ copy_headers ()
 }
 
 stage="$(pwd)/stage"
+
+[ -f "$stage"/packages/include/expat/expat.h ] || fail "You haven't installed the expat package yet."
+
+echo "${XMLRPCEPI_VERSION}" > "${stage}/VERSION.txt"
+
 pushd "$XMLRPCEPI_SOURCE_DIR"
     case "$AUTOBUILD_PLATFORM" in
         "windows")
