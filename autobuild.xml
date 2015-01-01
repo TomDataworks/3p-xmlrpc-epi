@@ -70,11 +70,11 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>647a8e888a1aabec1618c4171f39314a</string>
+              <string>18295330fdbc65db03a25bc479a38928</string>
               <key>hash_algorithm</key>
               <string>md5</string>
               <key>url</key>
-              <string>http://depot.alchemyviewer.org/pub/windows/lib/expat-2.1.0-windows64-201412301558.tar.bz2</string>
+              <string>http://depot.alchemyviewer.org/pub/windows/lib/expat-2.1.0-windows64-201501010148.tar.bz2</string>
             </map>
             <key>name</key>
             <string>windows64</string>
