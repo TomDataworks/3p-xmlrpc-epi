@@ -48,9 +48,11 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>d92b89d9c8eb9c57346f9896712c1e27</string>
+              <string>13c66126ef85daf9fc145eabde6426a7</string>
+              <key>hash_algorithm</key>
+              <string>md5</string>
               <key>url</key>
-              <string>http://depot.alchemyviewer.org/pub/linux/lib/expat-2.1.0-linux64-20141210.tar.bz2</string>
+              <string>http://depot.alchemyviewer.org/pub/linux64/lib/expat-2.1.0-linux64-201501030119.tar.bz2</string>
             </map>
             <key>name</key>
             <string>linux64</string>
@@ -198,9 +200,7 @@
           </map>
           <key>manifest</key>
           <array>
-            <string>lib/debug/pkgconfig/*.pc</string>
             <string>lib/debug/*.a</string>
-            <string>lib/release/pkgconfig/*.pc</string>
             <string>lib/release/*.a</string>
           </array>
           <key>name</key>
