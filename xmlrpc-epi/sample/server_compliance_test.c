@@ -290,6 +290,7 @@ int main(int argc, char **argv)
    int version = 0;
    int escaping = 0;
    int output = 0;
+   char *methodName = "method_TestNormal";
    char *encoding = 0;
 
    /* for every argument (after the program name) */
@@ -352,6 +353,9 @@ int main(int argc, char **argv)
                else if(!strcmp(val, "both")) {
                   output = 2;
                }
+            }
+            else if(!strcmp(key, "method")) {
+               methodName = val;
             }
 
             i++;

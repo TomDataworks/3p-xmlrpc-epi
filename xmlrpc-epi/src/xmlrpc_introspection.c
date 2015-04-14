@@ -576,6 +576,7 @@ int XMLRPC_ServerAddIntrospectionData(XMLRPC_SERVER server, XMLRPC_VALUE desc) {
  * SOURCE
  */
 int XMLRPC_ServerRegisterIntrospectionCallback(XMLRPC_SERVER server, XMLRPC_IntrospectionCallback cb) {
+   int bSuccess = 0;
    if(server && cb) {
 
       doc_method* dm = calloc(1, sizeof(doc_method));
@@ -584,7 +585,10 @@ int XMLRPC_ServerRegisterIntrospectionCallback(XMLRPC_SERVER server, XMLRPC_Intr
          dm->method = cb;
          dm->b_called = 0;
 
-         if(!Q_PushTail(&server->docslist, dm)) {
+         if(Q_PushTail(&server->docslist, dm)) {
+            bSuccess = 1;
+         }
+         else {
             my_free(dm);
          }
       }

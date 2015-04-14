@@ -66,6 +66,7 @@ int main(int argc, char **argv)
   int verbosity = 0;
   int version = 0;
   int escaping = 0;
+  int output = 0;
   char *methodName = "method_TestNormal";
   char *encoding = 0;
   XMLRPC_REQUEST request;
@@ -123,6 +124,17 @@ int main(int argc, char **argv)
            }
            else if(!strcmp(key, "encoding")) {
               encoding = val;
+           }
+           else if(!strcmp(key, "output")) {
+              if(!strcmp(val, "response")) {
+                 output = 0;
+              }
+              else if(!strcmp(val, "request")) {
+                 output = 1;
+              }
+              else if(!strcmp(val, "both")) {
+                 output = 2;
+              }
            }
            else if(!strcmp(key, "method")) {
               methodName = val;
