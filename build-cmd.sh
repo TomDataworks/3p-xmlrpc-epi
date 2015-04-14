@@ -92,38 +92,46 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
 			install_name_tool -change "/usr/lib/libexpat.1.dylib" "@executable_path/../Resources/libexpat.1.dylib" "$stage/lib/release/libxmlrpc-epi.0.dylib"
         ;;
         "linux")
-            opts='-m32'
+            # Default target to 32-bit
+            opts="${TARGET_OPTS:--m32}"
+            JOBS=`cat /proc/cpuinfo | grep processor | wc -l`
+            HARDENED="-fstack-protector-strong -D_FORTIFY_SOURCE=2"
+
             CFLAGS="$opts -Og -g -I$stage/packages/include/expat" \
             CXXFLAGS="$opts -Og -g -I$stage/packages/include/expat" \
             LDFLAGS="$opts -L$stage/packages/lib/debug" \
             ./configure --with-pic --prefix="\${AUTOBUILD_PACKAGES_DIR}" --includedir="\${prefix}/include/xmlrpc-epi" --libdir="\${prefix}/lib/debug"
-            make
+            make -j$JOBS
             make install DESTDIR="$stage"
             make distclean
 
-            CFLAGS="$opts -O3 -I$stage/packages/include/expat" \
-            CXXFLAGS="$opts -O3 -I$stage/packages/include/expat" \
+            CFLAGS="$opts -O3 -g -I$stage/packages/include/expat" \
+            CXXFLAGS="$opts -O3 -g -I$stage/packages/include/expat" \
             LDFLAGS="$opts -L$stage/packages/lib/release" \
             ./configure --with-pic --prefix="\${AUTOBUILD_PACKAGES_DIR}" --includedir="\${prefix}/include/xmlrpc-epi" --libdir="\${prefix}/lib/release"
-            make
+            make -j$JOBS
             make install DESTDIR="$stage"
             make distclean
         ;;
         "linux64")
-            opts='-m64'
+            # Default target to 64-bit
+            opts="${TARGET_OPTS:--m64}"
+            JOBS=`cat /proc/cpuinfo | grep processor | wc -l`
+            HARDENED="-fstack-protector-strong -D_FORTIFY_SOURCE=2"
+
             CFLAGS="$opts -Og -g -I$stage/packages/include/expat" \
             CXXFLAGS="$opts -Og -g -I$stage/packages/include/expat" \
             LDFLAGS="$opts -L$stage/packages/lib/debug" \
             ./configure --with-pic --prefix="\${AUTOBUILD_PACKAGES_DIR}" --includedir="\${prefix}/include/xmlrpc-epi" --libdir="\${prefix}/lib/debug"
-            make
+            make -j$JOBS
             make install DESTDIR="$stage"
             make distclean
 
-            CFLAGS="$opts -O3 -I$stage/packages/include/expat" \
-            CXXFLAGS="$opts -O3 -I$stage/packages/include/expat" \
+            CFLAGS="$opts -O3 -g $HARDENED -I$stage/packages/include/expat" \
+            CXXFLAGS="$opts -O3 -g $HARDENED -I$stage/packages/include/expat" \
             LDFLAGS="$opts -L$stage/packages/lib/release" \
             ./configure --with-pic --prefix="\${AUTOBUILD_PACKAGES_DIR}" --includedir="\${prefix}/include/xmlrpc-epi" --libdir="\${prefix}/lib/release"
-            make
+            make -j$JOBS
             make install DESTDIR="$stage"
             make distclean
         ;;
