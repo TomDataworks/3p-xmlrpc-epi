@@ -46,8 +46,8 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
         "windows")
             load_vsvars
             
-            build_sln "xmlrpcepi.sln" "Debug|Win32" "xmlrpcepi"
-            build_sln "xmlrpcepi.sln" "Release|Win32" "xmlrpcepi"
+            build_sln "xmlrpcepi.sln" "Debug" "Win32" "xmlrpcepi"
+            build_sln "xmlrpcepi.sln" "Release" "Win32" "xmlrpcepi"
             mkdir -p "$stage/lib/debug"
             mkdir -p "$stage/lib/release"
             cp "Debug/xmlrpcepi.lib" \
@@ -60,8 +60,8 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
         "windows64")
             load_vsvars
             
-            build_sln "xmlrpcepi.sln" "Debug|x64" "xmlrpcepi"
-            build_sln "xmlrpcepi.sln" "Release|x64" "xmlrpcepi"
+            build_sln "xmlrpcepi.sln" "Debug" "x64" "xmlrpcepi"
+            build_sln "xmlrpcepi.sln" "Release" "x64" "xmlrpcepi"
             mkdir -p "$stage/lib/debug"
             mkdir -p "$stage/lib/release"
             cp "x64/Debug/xmlrpcepi.lib" \
