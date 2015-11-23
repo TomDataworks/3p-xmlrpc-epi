@@ -22,11 +22,11 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>fe974f60cd08ed9f08bdd58f63e2a5cb</string>
+              <string>2c30e4b6accd88c9b3c56f737897dd38</string>
               <key>hash_algorithm</key>
               <string>md5</string>
               <key>url</key>
-              <string>https://bitbucket.org/alchemyviewer/publiclibs-darwin/downloads/expat-2.1.0-darwin-201504231852.tar.bz2</string>
+              <string>https://bitbucket.org/alchemyviewer/publiclibs-darwin/downloads/expat-2.1.0-darwin-201511222059.tar.bz2</string>
             </map>
             <key>name</key>
             <string>darwin</string>
