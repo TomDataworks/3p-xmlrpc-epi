@@ -72,7 +72,7 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
             copy_headers "$stage/include/xmlrpc-epi"
         ;;
         "darwin")
-            opts='-arch i386 -arch x86_64 -iwithsysroot /Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.7'
+            opts='-arch i386 -arch x86_64 -iwithsysroot /Developer/SDKs/MacOSX10.11.sdk -mmacosx-version-min=10.9'
             CFLAGS="$opts" CXXFLAGS="$opts" LDFLAGS="$opts" \
                 ./configure --with-pic --prefix="$stage" \
                 --with-expat=no \
