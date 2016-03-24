@@ -95,7 +95,7 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
             # Default target to 32-bit
             opts="${TARGET_OPTS:--m32}"
             JOBS=`cat /proc/cpuinfo | grep processor | wc -l`
-            HARDENED="-fstack-protector-strong -D_FORTIFY_SOURCE=2"
+            HARDENED="-fstack-protector -D_FORTIFY_SOURCE=2"
 
             CFLAGS="$opts -Og -g -I$stage/packages/include/expat" \
             CXXFLAGS="$opts -Og -g -I$stage/packages/include/expat" \
@@ -117,7 +117,7 @@ pushd "$XMLRPCEPI_SOURCE_DIR"
             # Default target to 64-bit
             opts="${TARGET_OPTS:--m64}"
             JOBS=`cat /proc/cpuinfo | grep processor | wc -l`
-            HARDENED="-fstack-protector-strong -D_FORTIFY_SOURCE=2"
+            HARDENED="-fstack-protector -D_FORTIFY_SOURCE=2"
 
             CFLAGS="$opts -Og -g -I$stage/packages/include/expat" \
             CXXFLAGS="$opts -Og -g -I$stage/packages/include/expat" \
