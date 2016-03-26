@@ -62,11 +62,11 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>97786c456086c2aeb7554c755361df81</string>
+              <string>454170939e4d1ba07060b73d6f81b9fc</string>
               <key>hash_algorithm</key>
               <string>md5</string>
               <key>url</key>
-              <string>http://depot.alchemyviewer.org/pub/windows/lib-vc14/expat-2.1.0-windows-201601150958.tar.bz2</string>
+              <string>http://depot.alchemyviewer.org/pub/windows/lib-vc14/expat-2.1.1-windows-201603261409.tar.bz2</string>
             </map>
             <key>name</key>
             <string>windows</string>
@@ -76,11 +76,11 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>7a08c54a3a869068f40a6ad4ea2716bb</string>
+              <string>0cf6f4529ade22b7ae78da5d6303ed87</string>
               <key>hash_algorithm</key>
               <string>md5</string>
               <key>url</key>
-              <string>http://depot.alchemyviewer.org/pub/windows64/lib-vc14/expat-2.1.0-windows64-201512092314.tar.bz2</string>
+              <string>http://depot.alchemyviewer.org/pub/windows64/lib-vc14/expat-2.1.1-windows64-201603261406.tar.bz2</string>
             </map>
             <key>name</key>
             <string>windows64</string>
