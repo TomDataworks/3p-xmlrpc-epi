@@ -36,9 +36,9 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>f725a725a20514963e3aa35fd8c35481</string>
+              <string>158cc3f97432d3fc2e8d88a61ca19eae</string>
               <key>url</key>
-              <string>http://automated-builds-secondlife-com.s3.amazonaws.com/hg/repo/3p-expat/rev/246510/arch/Linux/installer/expat-2.0.1-linux-20111209.tar.bz2</string>
+              <string>http://dwaggy.tk/singularity/expat-2.2.0-linux-201609111705.tar.bz2</string>
             </map>
             <key>name</key>
             <string>linux</string>
@@ -175,9 +175,7 @@
           </map>
           <key>manifest</key>
           <array>
-            <string>lib/debug/pkgconfig/*.pc</string>
             <string>lib/debug/*.a</string>
-            <string>lib/release/pkgconfig/*.pc</string>
             <string>lib/release/*.a</string>
           </array>
           <key>name</key>
