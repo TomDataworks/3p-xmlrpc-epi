@@ -36,9 +36,9 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>158cc3f97432d3fc2e8d88a61ca19eae</string>
+              <string>PACKAGE_DEPS_MD5SUM</string>
               <key>url</key>
-              <string>http://dwaggy.tk/singularity/expat-2.2.0-linux-201609111705.tar.bz2</string>
+              <string>PACKAGE_DEPS_FILENAME</string>
             </map>
             <key>name</key>
             <string>linux</string>
